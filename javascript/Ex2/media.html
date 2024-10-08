@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Media</h1>
+    </header>
+    <section>
+        <div>
+            <label for="media">Media</label>
+            <input type="number" placeholder="Digite sua media" id="media">
+            <input type="button" onclick="media()" value="Enviar">
+            <p id="resultado"></p>
+        </div>
+    </section>
+    <script>
+        function media(){
+            let media = document.getElementById('media');
+            let res = document.getElementById('resultado');
+            media = Number(media.value);
+            if(media >= 8){
+                res.innerHTML = 'Aprovado com louvor';
+                document.body.style.backgroundImage = 'linear-gradient(180deg, #ffd700, #cc7000)';
+            }
+            else if(media >= 6 && media < 8){
+                res.innerHTML = 'Aprovado';
+                document.body.style.backgroundImage = 'linear-gradient(180deg, #00ff00 , #008000)';
+            }
+            else{
+                res.innerHTML = 'Reprovado';
+                document.body.style.backgroundImage = 'linear-gradient(180deg, #ff0000 , #660000)';
+            }
+        }
+    </script>
+</body>
+</html>

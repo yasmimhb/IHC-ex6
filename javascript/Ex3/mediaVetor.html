@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media2</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Media2</h1>
+    </header>
+    <section>
+        <div>
+            <label for="valor">Media</label>
+            <input type="number" placeholder="Digite valor" id="valor">
+            <input type="button" onclick="media2()" value="Enviar" style="width: 49%;"/>
+            <input type="button" onclick="limpar()" value="Limpar" style="width: 49%;"/>
+            <p id="resultado"></p>
+        </div>
+    </section>
+    <script>
+        var vet = [];   
+        function media2(){
+            const valor = document.getElementById('valor');
+            let res = document.getElementById('resultado');
+            const valoro = Number(valor.value);
+            let soma = 0;
+            vet.push(valoro);
+            for(let i=0; i < vet.length; i++){
+                soma += vet[i];
+            }
+            let media = soma/vet.length;
+            res.innerHTML = `A media do(s) valor(es) [${vet}] = ${media.toFixed(1)}`;
+        }
+        function limpar(){
+            let res = document.getElementById('resultado');
+            vet = [];
+            res.innerHTML = 'A media do(s) valor(es) [] =';
+        }
+    </script>
+</body>
+</html>

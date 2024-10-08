@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Maior</h1>
+    </header>
+    <section>
+        <div>
+            <label for="valor">Media</label>
+            <input type="number" placeholder="Digite valor" id="valor">
+            <input type="button" onclick="maior()" value="Enviar" style="width: 49%;"/>
+            <input type="button" onclick="limpar()" value="Limpar" style="width: 49%;"/>
+            <p id="resultado"></p>
+        </div>
+    </section>
+    <script>
+        var vet = [];  
+        function sortfunction(a, b){
+            return (a - b) 
+        }  
+        function maior(){
+            const valor = document.getElementById('valor');
+            let res = document.getElementById('resultado');
+            const valoro = Number(valor.value);
+            vet.push(valoro);
+            vet.sort(sortfunction);
+            let maior = vet[vet.length-1];
+            res.innerHTML = `O maior em [${vet}] = ${maior}`;
+        }
+        function limpar(){
+            let res = document.getElementById('resultado');
+            vet = [];
+            res.innerHTML = `O maior em [] = `;
+        }
+    </script>
+</body>
+</html>

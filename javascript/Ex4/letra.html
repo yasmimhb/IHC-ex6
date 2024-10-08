@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letra</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Letra</h1>
+    </header>
+    <section>
+        <div>
+            <label for="letra">Letra</label> 
+            <input type="text" placeholder="Digite uma letra" id="letra"/>
+            <input type="button" value="Enter" onclick="letra()" />
+            <p id="resultado"></p>
+        </div>
+    </section>
+<script>
+    function letra(){ 
+        let letra = document.querySelector('input#letra');
+        let res = document.querySelector('p#resultado');
+
+        if(letra.value=="a" ||  letra.value=="b"){
+            res.innerHTML = letra.value.toUpperCase();
+        }
+        else {
+            res.innerHTML = 'Outra letra'
+        }
+    }
+</script>

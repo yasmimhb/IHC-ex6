@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opção</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Opção</h1>
+    </header>
+    <section>
+        <div>
+            <label for="op">Opções</label> 
+            <select id="op" aria-placeholder="Opções">
+                <option value="Op1">Opção 1</option>
+                <option value="Op2">Opção 2</option>
+                <option value="Op3">Opção 3</option>
+                <option value="Op4">Opção 4</option>
+            </select>
+            <input type="button" onclick="opcao()" value="Salvar">
+            <p id="resultado"></p>
+        </div>
+    </section>
+    <script>
+        function opcao(){
+            let opcao = document.getElementById('op');
+            let res = document.getElementById('resultado');
+            opcao = opcao.value;
+            switch(opcao){
+                case 'Op1':
+                    res.innerHTML = "Opção 1 escolhida!!";
+                break;
+                case 'Op2':
+                    res.innerHTML = "Opção 2 escolhida!!";
+                break;
+                case 'Op3':
+                    res.innerHTML = "Opção 3 escolhida!!";
+                break;
+                default:
+                    res.innerHTML = "Opção Invalida!!";
+            }    
+        }
+    </script>
+</body>
+</html>
